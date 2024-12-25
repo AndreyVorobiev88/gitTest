@@ -4,7 +4,7 @@
  */
 
 
-
+/*
 var singleNumber = function(nums) {
 
     nums.sort();
@@ -18,4 +18,21 @@ var singleNumber = function(nums) {
     }
 
     return undefined;
-}
+};
+*/
+
+var singleNumber = function(nums) {
+
+    let rez = undefined;
+
+    for (let i = 0; i < nums.length; i++)
+    {
+        if (nums.indexOf(nums[i],0) === nums.lastIndexOf(nums[i])) {
+            rez = nums[i];
+            break;
+        }
+    }
+
+    return rez;
+
+};
