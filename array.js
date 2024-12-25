@@ -4,32 +4,28 @@
  */
 
 
+
 var singleNumber = function(nums) {
+
+    let rez;
     
-    if ((nums.length < 1) || (nums.length > 30000)) return undefined
-
-   let rez = undefined;
-
-   for (let i = 0; i < nums.length; i++) {
-
-    let bFlag = true;
-
-    for (let j = 0; j < nums.length; j++) {
-
-        if((nums[i] == nums[j]) && (i != j))
-        {
-            bFlag = false;
-        }
-        
-    }
-
-    if (bFlag)
+    if (nums.length == 1) return nums[0];
+    else
     {
-        rez = nums[i];
-        break;
+        nums.sort();
+        let i = 0;
+        while (i < nums.length) 
+        {
+            if (nums[i] == nums[i+1]) {
+                i+=2;
+            }
+            else
+            {
+                rez = nums[i];
+                break;
+            }
+        }
     }
-
-   }
 
     return rez;
 };
