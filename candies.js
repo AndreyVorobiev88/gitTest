@@ -7,7 +7,7 @@
 
 
 
-
+/*
 var kidsWithCandies = function(candies, extraCandies) {
 
     var rez = new Array(); 
@@ -22,6 +22,19 @@ var kidsWithCandies = function(candies, extraCandies) {
             rez.push(false)
         
     }
+
+    return rez
+};
+*/
+var kidsWithCandies = function(candies, extraCandies) {
+
+    var rez = new Array(); 
+    candies.forEach(element => {
+        if (element+extraCandies >= Math.max.apply(null, candies))
+            rez.push(true)
+        else
+            rez.push(false)
+    });
 
     return rez
 };
