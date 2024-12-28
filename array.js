@@ -21,6 +21,7 @@ var singleNumber = function(nums) {
 };
 */
 
+/*
 var singleNumber = function(nums) {
 
     let rez = undefined;
@@ -36,3 +37,33 @@ var singleNumber = function(nums) {
     return rez;
 
 };
+*/
+
+var singleNumber = function(nums) {
+
+var obj = {};   
+
+for (let i = 0; i < nums.length; i++) {
+    if (obj[nums[i]]) obj[nums[i]] += 1
+    else
+        obj[nums[i]] = 1;
+}
+
+return Object.keys(obj).find(key => obj[key] === 1);
+
+};
+
+var singleNumber = function(nums) {
+
+    var obj = {};   
+    
+    for (let i = 0; i < nums.length; i++) {
+        if (obj.hasOwnProperty(nums[i])) obj[nums[i]] += 1
+        else
+            obj[nums[i]] = 1;
+    }
+    
+    return +Object.keys(obj).find(key => obj[key] === 1);
+    
+    };
+    
